@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hema-webhook-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: TELEGRAM_TOKEN
+        value: YOUR_TELEGRAM_TOKEN
+      - key: TELEGRAM_CHAT_ID
+        value: YOUR_CHAT_ID
